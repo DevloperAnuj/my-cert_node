@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
   res.send("Hello World !");
 });
 
-app.get("/ping", async (req, res) => {
+app.post("/ping", async (req, res) => {
   console.log("Function Run for PING");
   try {
     const response = await mailchimp.searchMembers.search(req.body.email);
