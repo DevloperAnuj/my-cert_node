@@ -1,11 +1,12 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const express = require("express");
 var bodyParser = require("body-parser");
+require("dotenv").config();
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 mailchimp.setConfig({
-  apiKey: "7f796955d7344e43062fefeb9c1934dc-us21",
+  apiKey: process.env.API_KEY,
   server: "us21",
 });
 
@@ -60,6 +61,7 @@ app.get("/ping", async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+    console.log(`=================${res.statusCode}=================`);
     res.status(500).send("Internal Server Error !");
   }
 });
