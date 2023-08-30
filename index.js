@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 mailchimp.setConfig({
-  apiKey: "3d04b7de353cdc40d8ea77b21e609583-us21",
+  apiKey: "7f796955d7344e43062fefeb9c1934dc-us21",
   server: "us21",
 });
 
