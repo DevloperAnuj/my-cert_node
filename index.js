@@ -1,6 +1,7 @@
 const mailchimp = require("@mailchimp/mailchimp_marketing");
 const express = require("express");
 var bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const port = process.env.port || 3000;
@@ -11,6 +12,7 @@ mailchimp.setConfig({
 });
 
 // Calling the express.json() method for parsing
+app.use(cors());
 app.use(bodyParser.json());
 
 // app.get("/:id", async (req, res) => {
